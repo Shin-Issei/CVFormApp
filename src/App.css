@@ -1,0 +1,15 @@
+:root{
+  font-size: 18px;
+}
+
+#main{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#cv-display{
+  display: flex;
+  flex-direction:column;
+  margin: 1rem;
+}
