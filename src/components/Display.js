@@ -1,6 +1,8 @@
+
+
 function Display(props) {
   return (
-    <div>
+    <div className="Display">
         Contact Information
       <div>Name: {props.name}</div>
       <div>Phone: {props.phone}</div>

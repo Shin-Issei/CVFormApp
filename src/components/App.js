@@ -1,6 +1,8 @@
+import '../styles/App.css';
 import React from "react";
+import Display from './Display';
 
-class FormElements extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -8,7 +10,6 @@ class FormElements extends React.Component {
       name: "Jordan",
       phone: "8609674119",
       email: "MrJordanCollins@yahoo.com",
-      allInfo: this.phone
     };
     this.updateReactState = this.updateReactState.bind(this);
     this.displayMode = this.displayMode.bind(this);
@@ -35,24 +36,17 @@ class FormElements extends React.Component {
 
   render() {
     if (this.state.mode === "Display") {
-      return (
-        // <div>
-        //   <div id="cv-display">
-        //     <p id="info">
-        //     Name: {this.state.name} 
-        //     Phone: {this.state.phone} 
-        //     Email: {this.state.email} 
-        //     </p>
-        //   </div>
-        //   <button onClick={this.editMode}>Edit</button>
-        // </div>
-        <div>
-          {this.state.allInfo}
+      return ( // Replace with dedicated display component
+        <div id='main'>
+          CV App
+          <Display name={this.state.name} phone={this.state.phone} email={this.state.email}/>
+          <button onClick={this.editMode}>Edit</button>
         </div>
       );
     }
     return (
-      <div>
+      <div id='main'>
+        CV App
         <form>
           <label>Name: </label>
           <input
@@ -79,4 +73,5 @@ class FormElements extends React.Component {
   }
 }
 
-export default FormElements;
+
+export default App;
