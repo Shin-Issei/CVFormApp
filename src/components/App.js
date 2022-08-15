@@ -10,6 +10,10 @@ class App extends React.Component {
       name: "Jordan",
       phone: "8609674119",
       email: "MrJordanCollins@yahoo.com",
+      education:"",
+      degree:"",
+      prevJobs:"",
+      skills:"",
     };
     this.updateReactState = this.updateReactState.bind(this);
     this.displayMode = this.displayMode.bind(this);
@@ -39,7 +43,7 @@ class App extends React.Component {
       return ( // Replace with dedicated display component
         <div id='main'>
           CV App
-          <Display name={this.state.name} phone={this.state.phone} email={this.state.email}/>
+          <Display name={this.state.name} phone={this.state.phone} email={this.state.email} education={this.state.education}/>
           <button onClick={this.editMode}>Edit</button>
         </div>
       );
@@ -64,6 +68,12 @@ class App extends React.Component {
           <input
             name="email"
             value={this.state.email}
+            onChange={this.updateReactState}
+          />
+          <label>Education: </label>
+          <input
+            name="education"
+            value={this.state.education}
             onChange={this.updateReactState}
           />
           <button onClick={this.displayMode}>Submit</button>
