@@ -1,6 +1,6 @@
-import '../styles/App.css';
+import "../styles/App.css";
 import React from "react";
-import Display from './Display';
+import Display from "./Display";
 
 class App extends React.Component {
   constructor(props) {
@@ -10,10 +10,10 @@ class App extends React.Component {
       name: "Jordan",
       phone: "8609674119",
       email: "MrJordanCollins@yahoo.com",
-      education:"",
-      degree:"",
-      prevJobs:"",
-      skills:"",
+      education: "",
+      degree: "",
+      prevJobs: "",
+      skills: "",
     };
     this.updateReactState = this.updateReactState.bind(this);
     this.displayMode = this.displayMode.bind(this);
@@ -23,8 +23,6 @@ class App extends React.Component {
   displayMode() {
     this.setState({ mode: "Display" });
   }
-
-
 
   updateReactState(event) {
     const value = event.target.value;
@@ -40,16 +38,22 @@ class App extends React.Component {
 
   render() {
     if (this.state.mode === "Display") {
-      return ( // Replace with dedicated display component
-        <div id='main'>
+      return (
+        // Replace with dedicated display component
+        <div id="main">
           CV App
-          <Display name={this.state.name} phone={this.state.phone} email={this.state.email} education={this.state.education}/>
+          <Display
+            name={this.state.name}
+            phone={this.state.phone}
+            email={this.state.email}
+            education={this.state.education}
+          />
           <button onClick={this.editMode}>Edit</button>
         </div>
       );
     }
     return (
-      <div id='main'>
+      <div id="main">
         CV App
         <form>
           <label>Name: </label>
@@ -70,7 +74,7 @@ class App extends React.Component {
             value={this.state.email}
             onChange={this.updateReactState}
           />
-          <label>Education: </label>
+          <label>College Attended: </label>
           <input
             name="education"
             value={this.state.education}
@@ -82,6 +86,5 @@ class App extends React.Component {
     );
   }
 }
-
 
 export default App;
