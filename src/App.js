@@ -1,5 +1,6 @@
 import './App.css';
 import React from "react";
+import Display from './components/Display';
 
 class App extends React.Component {
   constructor(props) {
@@ -39,13 +40,7 @@ class App extends React.Component {
       return ( // Replace with dedicated display component
         <div id='main'>
           CV App
-          <div id="cv-display">
-            <p id="info">
-            Name: {this.state.name} 
-            Phone: {this.state.phone} 
-            Email: {this.state.email} 
-            </p>
-          </div>
+          <Display name={this.state.name} phone={this.state.phone} email={this.state.email}/>
           <button onClick={this.editMode}>Edit</button>
         </div>
       );

@@ -10,6 +10,12 @@
   padding: 2rem;
 }
 
+form{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 #info{
   white-space: pre-wrap;
 }
