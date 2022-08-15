@@ -1,15 +1,20 @@
 :root{
   font-size: 18px;
+  --dbug: 1px red solid;
 }
 
 #main{
   display:flex;
   flex-direction: column;
   align-items: center;
+  padding: 2rem;
 }
 
-#cv-display{
-  display: flex;
-  flex-direction:column;
-  margin: 1rem;
+#info{
+  white-space: pre-wrap;
+}
+
+#cv-display > *{
+  border: var(--dbug);
+
 }

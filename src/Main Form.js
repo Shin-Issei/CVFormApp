@@ -8,19 +8,18 @@ class FormElements extends React.Component {
       name: "Jordan",
       phone: "8609674119",
       email: "MrJordanCollins@yahoo.com",
+      allInfo: this.phone
     };
     this.updateReactState = this.updateReactState.bind(this);
-    this.displayHelloWorld = this.displayHelloWorld.bind(this);
-    this.goBack = this.goBack.bind(this);
+    this.displayMode = this.displayMode.bind(this);
+    this.editMode = this.editMode.bind(this);
   }
 
-  displayHelloWorld() {
+  displayMode() {
     this.setState({ mode: "Display" });
   }
 
-  //   updateReactState(event) {
-  //     this.setState({ name: event.target.value });
-  //   }
+
 
   updateReactState(event) {
     const value = event.target.value;
@@ -30,19 +29,25 @@ class FormElements extends React.Component {
     });
   }
 
-  goBack() {
+  editMode() {
     this.setState({ mode: "Input" });
   }
 
   render() {
     if (this.state.mode === "Display") {
       return (
+        // <div>
+        //   <div id="cv-display">
+        //     <p id="info">
+        //     Name: {this.state.name} 
+        //     Phone: {this.state.phone} 
+        //     Email: {this.state.email} 
+        //     </p>
+        //   </div>
+        //   <button onClick={this.editMode}>Edit</button>
+        // </div>
         <div>
-          <div id="cv-display">
-            Name: {this.state.name}
-            Phone: {this.state.phone}
-          </div>
-          <button onClick={this.goBack}>goBack</button>
+          {this.state.allInfo}
         </div>
       );
     }
@@ -57,12 +62,17 @@ class FormElements extends React.Component {
           />
           <label>Phone Number: </label>
           <input
-            required
             name="phone"
             value={this.state.phone}
             onChange={this.updateReactState}
           />
-          <button onClick={this.displayHelloWorld}>Submit</button>
+          <label>E-mail: </label>
+          <input
+            name="email"
+            value={this.state.email}
+            onChange={this.updateReactState}
+          />
+          <button onClick={this.displayMode}>Submit</button>
         </form>
       </div>
     );
