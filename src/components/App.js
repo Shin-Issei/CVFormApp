@@ -39,7 +39,6 @@ class App extends React.Component {
   render() {
     if (this.state.mode === "Display") {
       return (
-        // Replace with dedicated display component
         <div id="main">
           CV App
           <Display
@@ -47,6 +46,8 @@ class App extends React.Component {
             phone={this.state.phone}
             email={this.state.email}
             education={this.state.education}
+            prevJobs={this.state.prevJobs}
+            skills={this.state.skills}
           />
           <button onClick={this.editMode}>Edit</button>
         </div>
@@ -74,10 +75,24 @@ class App extends React.Component {
             value={this.state.email}
             onChange={this.updateReactState}
           />
-          <label>College Attended: </label>
+          <label>College: </label>
           <input
             name="education"
             value={this.state.education}
+            onChange={this.updateReactState}
+          />
+          <label>Previous Employer: </label>
+          <input
+            name="prevJobs"
+            value={this.state.prevJobs}
+            onChange={this.updateReactState}
+          />
+          <label>Relevant Skills: </label>
+          <textarea
+          rows="10"
+          cols="30"
+            name="skills"
+            value={this.state.skills}
             onChange={this.updateReactState}
           />
           <button onClick={this.displayMode}>Submit</button>
